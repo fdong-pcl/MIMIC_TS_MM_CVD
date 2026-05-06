@@ -154,37 +154,6 @@ The following corresponds to `CVD_coarse_category.csv` in the code[cite: 7]:
 | **CVD_G**    | 440–448    | I70–I79       | Arterial / arteriolar / capillary diseases                  | 动脉与微血管疾病     |
 | **CVD_H**    | 451–459    | I80–I89       | Venous and lymphatic diseases                               | 静脉、淋巴管疾病     |
 
-### 🟦 Fine Categories + ICD Ranges
-
-The following corresponds to `CVD_fine_category.csv` in the code[cite: 7]:
-
-| InternalCode | ICD9 Code | ICD10 Code | English Name                                          | 中文名称                          |
-| ------------ | --------- | ---------- | ----------------------------------------------------- | --------------------------------- |
-| **CVD_A1**   | 394–397   | I05–I09    | Rheumatic valvular disease                            | 风湿性瓣膜病                      |
-| **CVD_E1**   | 424       | I34–I37    | Nonrheumatic valvular disease                         | 非风湿性瓣膜病                    |
-| **CVD_C1**   | 410       | I21–I22    | Acute myocardial infarction (AMI, incl. STEMI/NSTEMI) | 急性心肌梗死（含 STEMI / NSTEMI） |
-| **CVD_C2**   | 414       | I24–I25    | Chronic ischemic heart disease                        | 慢性缺血性心脏病                  |
-| **CVD_C3**   | 413       | I20        | Angina pectoris                                       | 心绞痛                            |
-| **CVD_E2**   | 428       | I50        | Heart failure (HF)                                    | 心力衰竭                          |
-| **CVD_E3**   | 425       | I42        | Cardiomyopathy                                        | 心肌病                            |
-| **CVD_E4**   | 420       | I30–I32    | Pericarditis                                          | 心包炎                            |
-| **CVD_E5**   | 422       | I40        | Myocarditis                                           | 心肌炎                            |
-| **CVD_E6**   | 421 / 424 | I33–I38    | Endocarditis                                          | 心内膜炎                          |
-| **CVD_E7**   | —         | I5A        | Non-ischemic myocardial injury                        | 非缺血性心肌损伤                  |
-| **CVD_D1**   | 416       | I26–I28    | Pulmonary heart disease                               | 肺心病                            |
-| **CVD_F1**   | 430       | I60        | Subarachnoid hemorrhage (SAH)                         | 蛛网膜下腔出血                    |
-| **CVD_F2**   | 431       | I61        | Intracerebral hemorrhage (ICH)                        | 脑出血 / 颅内出血                 |
-| **CVD_F3**   | 432       | I62        | Other intracranial hemorrhage                         | 其他颅内出血                      |
-| **CVD_F4**   | 433–434   | I63        | Cerebral infarction (Ischemic Stroke)                 | 脑梗死 / 缺血性脑卒中             |
-| **CVD_F5**   | 435       | G45        | TIA (Transient Ischemic Attack)                       | 短暂性脑缺血发作                  |
-| **CVD_F6**   | 438       | I69        | Sequelae of cerebrovascular diseases                  | 脑血管病后遗症                    |
-| **CVD_G1**   | 440       | I70        | Atherosclerosis                                       | 动脉粥样硬化                      |
-| **CVD_G2**   | 441       | I71        | Aneurysm                                              | 动脉瘤                            |
-| **CVD_G3**   | 443       | I73        | Occlusive peripheral arterial disease                 | 动脉闭塞性疾病                    |
-| **CVD_H1**   | 451       | I80        | Phlebitis & thrombophlebitis                          | 静脉炎与血栓性静脉炎              |
-| **CVD_H2**   | 457       | I88–I89    | Lymphatic diseases                                    | 淋巴系统疾病                      |
-| **CVD_H3**   | 458–459   | I95–I99    | Other/unspecified circulatory disorders               | 其他循环系统疾病                  |
-
 ---
 
 # 📚 Appendix B — PhysioNet Data Sources
