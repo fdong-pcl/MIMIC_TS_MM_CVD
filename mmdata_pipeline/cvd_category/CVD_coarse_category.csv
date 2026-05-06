@@ -1,0 +1,9 @@
+InternalCode,ICD9_Code,ICD10_Code,EnglishName,ChineseName,Notes
+CVD_A,390-398,I00-I09,Rheumatic heart diseases,风湿性心脏病,
+CVD_B,401-405,I10-I16,Hypertensive diseases,高血压及相关心血管病,
+CVD_C,410-414,I20-I25,Ischemic heart diseases,缺血性心脏病,
+CVD_D,415-417,I26-I28,Pulmonary circulation diseases,肺循环疾病,
+CVD_E,420-429,I30-I52,Other heart diseases,其他心脏疾病,
+CVD_F,430-438,"I60-I69,G45",Cerebrovascular diseases,脑血管疾病,"Includes TIA (G45)"
+CVD_G,440-449,I70-I79,Diseases of arteries arterioles and capillaries,动脉、微动脉与毛细血管疾病,
+CVD_H,451-459,I80-I99,Diseases of veins lymphatic vessels and other circulatory diseases,静脉、淋巴及其他循环系统疾病,

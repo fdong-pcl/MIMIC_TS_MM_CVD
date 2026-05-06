@@ -1,0 +1,31 @@
+InternalCode,ICD9_Code,ICD10_Code,EnglishName,ChineseName
+CVD_A1,394-397,I05-I09,Rheumatic valvular disease,风湿性瓣膜病
+CVD_A2,390-393 / 398,I00-I04,Acute rheumatic fever and other,急性风湿热及其他风湿性心脏病
+CVD_B1,401,I10,Essential hypertension,原发性高血压
+CVD_B2,402-404,I11-I13,Hypertensive heart and renal disease,高血压心脏病和肾脏病
+CVD_B3,405,I15-I16,Secondary hypertension and hypertensive crisis,继发性高血压与高血压危象
+CVD_C1,410,I21-I22,Acute myocardial infarction,急性心肌梗死
+CVD_C2,413,I20,Angina pectoris,心绞痛
+CVD_C3,411-412 / 414,I23-I25,Other and chronic ischemic heart disease,其他及慢性缺血性心脏病
+CVD_D1,415,I26,Pulmonary embolism,肺栓塞
+CVD_D2,416-417,I27-I28,Other pulmonary heart diseases,其他肺源性心脏病
+CVD_E1,420,I30-I32,Acute pericarditis and other pericardial diseases,急性心包炎及其他心包疾病
+CVD_E2,421,I33 / I39,Acute and subacute endocarditis,急性和亚急性心内膜炎
+CVD_E3,424,I34-I38,Nonrheumatic valve disorders,非风湿性瓣膜病
+CVD_E4,422,I40-I41,Myocarditis,心肌炎
+CVD_E5,425,I42-I43,Cardiomyopathy,心肌病
+CVD_E6,426-427,I44-I49,Arrhythmias and conduction disorders,心律失常及传导阻滞
+CVD_E7,428,I50,Heart failure,心力衰竭
+CVD_E8,423 / 429,I51-I52 / I5A,Non-ischemic myocardial injury and other,非缺血性心肌损伤及其他
+CVD_F1,430,I60,Subarachnoid hemorrhage,蛛网膜下腔出血
+CVD_F2,431-432,I61-I62,Intracerebral and other intracranial hemorrhage,脑出血及其他颅内出血
+CVD_F3,433-434 / 436,I63-I66,Cerebral infarction and occlusion,脑梗死及脑血管闭塞
+CVD_F4,435,G45,Transient ischemic attack (TIA),短暂性脑缺血发作
+CVD_F5,437-438,I67-I69,Sequelae and other cerebrovascular diseases,脑血管病后遗症及其他
+CVD_G1,440,I70,Atherosclerosis,动脉粥样硬化
+CVD_G2,441,I71,Aortic aneurysm and dissection,主动脉瘤和夹层
+CVD_G3,442-449,I72-I79,Other peripheral vascular diseases,其他外周血管疾病
+CVD_H1,451-453,I80-I82,Phlebitis and venous thrombosis,静脉炎与静脉血栓形成
+CVD_H2,454-456,I83-I87,Varicose veins and other venous diseases,静脉曲张及其他静脉疾病
+CVD_H3,457,I88-I89,Lymphatic vessel diseases,淋巴系统疾病
+CVD_H4,458-459,I90-I99,Hypotension and other circulatory diseases,低血压及其他循环系统疾病

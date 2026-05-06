@@ -1,0 +1,33 @@
+[project]
+name = "mimic-cvd-multimodal"
+version = "0.1.0"
+description = "MIMIC-IV Temporal Multimodal CVD Pipeline"
+readme = "README.md"
+requires-python = ">=3.9"
+
+# Core dependencies
+dependencies = [
+    "pandas>=2.1.0",
+    "numpy",
+    "scikit-learn",
+    "tqdm",
+    "pyarrow",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jupyter",
+    "matplotlib",
+    "seaborn",
+    "matplotlib-venn",
+]
+
+# Tell uv that this project is NOT meant to be built as a package (wheel).
+# It's just a collection of scripts defining an environment.
+[tool.uv]
+package = false
+
+# (Optional) Tsinghua mirror, keep this if you added it earlier
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
