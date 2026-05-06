@@ -8,7 +8,7 @@ The extracted modalities include:
 - **CXR:** Chest X-ray images, metadata, and CheXpert labels.
 - **ECG:** Electrocardiogram waveforms and automated machine measurements.
 - **Echo:** Echocardiography study lists and DICOM file paths.
-- **EHR Data:** Laboratory tests, prescriptions, and ICU procedure events[cite: 6].
+- **EHR Data:** Laboratory tests, prescriptions, and ICU procedure events.
 
 The final outcome is a leakage-free, temporally aligned multimodal CVD inpatient cohort, directly usable for machine learning model training, risk prediction, and clinical sequence modeling.
 
@@ -40,7 +40,7 @@ The following illustrates the output directory structure used by the pipeline (a
 
 # 🧩 3. Processing Pipeline
 
-The complete workflow consists of five sequential processing steps: **Step 0 → Step 1 → Step 2 → Step 3 → Step 4**[cite: 6].
+The complete workflow consists of five sequential processing steps: **Step 0 → Step 1 → Step 2 → Step 3 → Step 4**.
 
 ---
 
@@ -53,7 +53,7 @@ The complete workflow consists of five sequential processing steps: **Step 0 →
 - `admissions.csv.gz` (admission/discharge times).
 - `patients.csv.gz` (date of death).
 - `diagnoses_icd.csv.gz` (diagnoses).
-- `icustays.csv.gz` (ICU admission records)[cite: 6].
+- `icustays.csv.gz` (ICU admission records).
 
 ### ✔ Output Labels
 
@@ -71,9 +71,9 @@ The complete workflow consists of five sequential processing steps: **Step 0 →
 **Purpose:** Identify CVD-related admissions and strictly map ICD-9 diagnostic codes to ICD-10.
 
 - Categorizes diseases into Coarse (e.g., Ischemic Heart Disease) and Fine categories using reference CSVs.
-- Applies a strict normalization process using the official GEMs table (`icd9toicd10cmgem.csv`)[cite: 6].
-- **Strict Filtering:** Records with ICD-9 codes that fail to map to ICD-10 are systematically dropped to maintain data integrity[cite: 6].
-- **Output:** Generates the aggregated cohort file `step_1_cvd_cohort_[mode].csv.gz`[cite: 6].
+- Applies a strict normalization process using the official GEMs table (`icd9toicd10cmgem.csv`).
+- **Strict Filtering:** Records with ICD-9 codes that fail to map to ICD-10 are systematically dropped to maintain data integrity.
+- **Output:** Generates the aggregated cohort file `step_1_cvd_cohort_[mode].csv.gz`.
 
 ---
 
@@ -83,48 +83,48 @@ Matches the Step 1 CVD cohort with four modalities using the **hospitalization t
 
 Matching rule:
 
-> **Timestamp ∈ \[admittime - 24h, dischtime\]**[cite: 6]
+> **Timestamp ∈ \[admittime - 24h, dischtime\]**
 
-- **2A Notes:** Matches clinical notes using `charttime`[cite: 6].
-- **2B CXR:** Matches CXR metadata and DICOM image paths based on `StudyDate` and `StudyTime`[cite: 6].
-- **2C ECG:** Matches ECG machine measurements and waveform paths[cite: 6].
-- **2D Echo:** Matches Echo study metadata and DICOM paths[cite: 6].
+- **2A Notes:** Matches clinical notes using `charttime`.
+- **2B CXR:** Matches CXR metadata and DICOM image paths based on `StudyDate` and `StudyTime`.
+- **2C ECG:** Matches ECG machine measurements and waveform paths.
+- **2D Echo:** Matches Echo study metadata and DICOM paths.
 
 ---
 
 # ⏱️ Step 3 — Temporal Timeline Construction
 
-**Purpose:** Builds a master temporal sequence grouping concurrent events relative to the admission time[cite: 6].
+**Purpose:** Builds a master temporal sequence grouping concurrent events relative to the admission time.
 
-- Calculates a `time_offset_hours` for every clinical event[cite: 6].
-- Concurrently extracts and bundles structured EHR data (`labevents`, `prescriptions`, `procedureevents`) into the timeline[cite: 6].
-- **Output:** Generates the standardized `master_timeline_[mode].csv.gz` and detailed grouped files (`details_notes_grp.csv.gz`, `details_lab_grp.csv.gz`, etc.)[cite: 6].
+- Calculates a `time_offset_hours` for every clinical event.
+- Concurrently extracts and bundles structured EHR data (`labevents`, `prescriptions`, `procedureevents`) into the timeline.
+- **Output:** Generates the standardized `master_timeline_[mode].csv.gz` and detailed grouped files (`details_notes_grp.csv.gz`, `details_lab_grp.csv.gz`, etc.).
 
 ---
 
 # 🛡️ Step 4 — Subject-Level Splits & Clean Labels
 
-**Purpose:** Creates physically isolated dataset splits to prevent data leakage during model training[cite: 6].
+**Purpose:** Creates physically isolated dataset splits to prevent data leakage during model training.
 
-- Generates a stratification key (`strat_key`) combining the primary CVD category and 30-day mortality status (`mortality_30d`)[cite: 6].
-- Executes a strict Subject-Level split: **70% Train / 10% Validation / 20% Test**[cite: 6].
-- **Output:** Produces `[train/val/test]_subjects_[mode].txt` ID lists and a clean label dataset (`cohort_labels_[mode].csv`)[cite: 6].
+- Generates a stratification key (`strat_key`) combining the primary CVD category and 30-day mortality status (`mortality_30d`).
+- Executes a strict Subject-Level split: **70% Train / 10% Validation / 20% Test**.
+- **Output:** Produces `[train/val/test]_subjects_[mode].txt` ID lists and a clean label dataset (`cohort_labels_[mode].csv`).
 
 ---
 
 # ▶ Running the Code
 
-The script supports two running modes via command-line arguments[cite: 6].
+The script supports two running modes via command-line arguments.
 
 **1. DEBUG Mode (Fast Testing)**
-Processes a small subset of patients (~1000 subjects) who possess intersecting data across CXR, ECG, Echo, and Notes. Ideal for testing pipeline execution and verifying outputs[cite: 6].
+Processes a small subset of patients (~1000 subjects) who possess intersecting data across CXR, ECG, Echo, and Notes. Ideal for testing pipeline execution and verifying outputs.
 
 ```bash
 python extract_temporal_multimodal_normicd10_cvd_3.py --mode DEBUG
 ```
 
 **2. ALL Mode (Full Dataset Generation)**
-Processes the entire MIMIC-IV dataset to build the complete, research-ready multimodal cohort[cite: 6].
+Processes the entire MIMIC-IV dataset to build the complete, research-ready multimodal cohort.
 
 ```bash
 python extract_temporal_multimodal_normicd10_cvd_3.py --mode ALL
@@ -134,14 +134,14 @@ python extract_temporal_multimodal_normicd10_cvd_3.py --mode ALL
 
 # 📌 Appendix A — CVD Classification System
 
-The CVD matching in this project is based on a **two-tier classification system**[cite: 7]:
+The CVD matching in this project is based on a **two-tier classification system**:
 
-- **Coarse Categories**: Grouped by organ system or major disease class[cite: 7].
-- **Fine Categories**: Correspond to common clinical subtypes (e.g., STEMI, NSTEMI, TIA, etc.)[cite: 7].
+- **Coarse Categories**: Grouped by organ system or major disease class.
+- **Fine Categories**: Correspond to common clinical subtypes (e.g., STEMI, NSTEMI, TIA, etc.).
 
 ### 🟥 Coarse Categories + ICD Ranges
 
-The following corresponds to `CVD_coarse_category.csv` in the code[cite: 7]:
+The following corresponds to `CVD_coarse_category.csv` in the code:
 
 | InternalCode | ICD9 Range | ICD10 Range   | English Name                                                | 中文名称             |
 | ------------ | ---------- | ------------- | ----------------------------------------------------------- | -------------------- |
@@ -158,7 +158,7 @@ The following corresponds to `CVD_coarse_category.csv` in the code[cite: 7]:
 
 # 📚 Appendix B — PhysioNet Data Sources
 
-The following lists all official PhysioNet data sources used in this project, including version numbers and access links, for reproducibility and environment setup[cite: 7].
+The following lists all official PhysioNet data sources used in this project, including version numbers and access links, for reproducibility and environment setup.
 
 | Data              | Version | PhysioNet Link                                   |
 | :---------------- | :------ | :----------------------------------------------- |
